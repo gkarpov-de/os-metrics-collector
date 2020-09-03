@@ -8,25 +8,21 @@ It takes some operation system metrics and puts them into PostgreSQL database th
 - 'consumer' - consumer implementation
 - 'producer' - producer implementation
 
-### How to build
+### Requirements and how to build
 Before building the project make sure that you have installed:
-- 'JDK' version >= 11
-
-and have access or have installed:
-- PostgreSQL database
-- Kafka server version >= 2.3
+ - 'JDK' version >= 11
+ - PostgreSQL database
+ - Kafka server version >= 2.3
 
 To build the project run './gradlew clean installDist' command
 
 *To prepare you SSL certificates:*
-
 Download:
 - 'Access Key' - expected file name is: 'service.key'
 - 'Access Certificate' - expected file name is: 'service.cert'
-- 'CA Certificate' - expected file name is: 'ca.pem'- there will be two - one for kafka, one for PostgreSql
+- 'CA Certificate' - expected file name is: 'ca.pem'- there should be two - one for the kafka, one for the PostgreSql
 
-Keystore and truststore for holding the keys and certificates can be 
-created with the following commands:
+Keystore and truststore for holding the keys and certificates can be created with the following commands:
 
 openssl pkcs12 -export -inkey service.key -in service.cert -out client.keystore.p12 -name service_key
 keytool -import -file ca.pem -alias CA -keystore client.truststore.jks
