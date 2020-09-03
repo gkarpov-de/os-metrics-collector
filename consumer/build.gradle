@@ -1,0 +1,39 @@
+apply plugin: 'application'
+
+group 'os-metrics-collector'
+version '0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':common')
+    compile group: 'org.flywaydb', name: 'flyway-core', version: '6.5.5'
+    compile 'org.postgresql:postgresql:42.2.16'
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "metrics.consumer.ConsumerAppLauncher"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+application {
+    mainClassName = 'metrics.consumer.ConsumerAppLauncher'
+}
+
+applicationDistribution.from('conf') {
+    into 'conf'
+}
+
+distributions {
+    main {
+        baseName = "consumer"
+    }
+
+}

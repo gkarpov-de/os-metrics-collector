@@ -1,0 +1,6 @@
+rootProject.name = 'os-metrics-collector'
+
+include 'common'
+include 'consumer'
+include 'producer'
+
