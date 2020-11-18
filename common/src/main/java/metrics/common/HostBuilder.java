@@ -18,7 +18,6 @@ public final class HostBuilder {
     private static final String HOST_IP = "omc.hostip"; // os.metrics.collector.hostip
 
     public static Host createHost(Config config) {
-
         return new Host(getHostName(config), getIpAddress(config), getHardwareData());
     }
 
@@ -30,8 +29,8 @@ public final class HostBuilder {
         final OperatingSystemMXBean osMXBean = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
 
         return new Hardware((long) (osMXBean.getSystemLoadAverage() * 100),
-                osMXBean.getTotalPhysicalMemorySize(),
-                osMXBean.getFreePhysicalMemorySize(),
+                osMXBean.getTotalMemorySize(),
+                osMXBean.getFreeMemorySize(),
                 osMXBean.getTotalSwapSpaceSize(),
                 osMXBean.getFreeSwapSpaceSize());
 
