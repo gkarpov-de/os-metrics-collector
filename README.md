@@ -16,11 +16,10 @@ Before building the project make sure that you have installed:
 
 To build the project run './gradlew clean installDist' command
 
-*To prepare you SSL certificates:*
-Download:
+*To prepare you SSL certificates you need to obtain following files:*
 - 'Access Key' - expected file name is: 'service.key'
 - 'Access Certificate' - expected file name is: 'service.cert'
-- 'CA Certificate' - expected file name is: 'ca.pem'- there should be two - one for the kafka, one for the PostgreSql
+- 'CA Certificate' - expected file name is: 'ca.pem'- there should be two - one for the Kafka, one for the PostgreSql
 
 Keystore and truststore for holding the keys and certificates can be created with the following commands:
 
@@ -46,7 +45,7 @@ if you want to use another name please see the full list of parameters in the 'c
     db.password - application user password
     omc.topicname - Kafka topic name
     
-### Too run Kafka producer
+### To run Kafka producer
 To run kafka producer you need:
 
 1. Create a kafka topic, default kafka topic is: 'os-metrics'. 
