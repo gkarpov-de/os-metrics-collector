@@ -35,5 +35,4 @@ distributions {
     main {
         baseName = "consumer"
     }
-
 }

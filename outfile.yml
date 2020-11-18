@@ -1,0 +1,15 @@
+- OMC_TOPICNAME=os-metrics
+- SSL_TRUSTSTORE_LOCATION=/Users/greg/app/producer/conf/client.truststore.jks
+- ACKS=1
+- OMC_HOSTNAME=localhost
+- OMC_IPADDRESS=127.0.0.1
+- SSL_TRUSTSTORE_PASSWORD=password123
+- SSL_KEYSTORE_PASSWORD=password123
+- SSL_KEY_PASSWORD=password123
+- OMC_SENDRATE=1000ms
+- CLIENT_ID=metricsproducer
+- SSL_KEYSTORE_LOCATION=/Users/greg/app/producer/conf/client.keystore.p12
+- SSL_KEYSTORE_TYPE=PKCS12
+- BOOTSTRAP_SERVERS=kafka-2b13142e-gkarpov-8e8f.aivencloud.com:17288
+- SECURITY_PROTOCOL=SSL
+- SSL_ENDPOINT_IDENTIFICATION_ALGORITHM=

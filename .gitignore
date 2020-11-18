@@ -2,6 +2,11 @@
 .gradle
 .idea
 .Ds_Store
+.conf
+.key
+.pem
+.cert
 
 # Ignore Gradle build output directory
 build
+secrets

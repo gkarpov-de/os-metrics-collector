@@ -15,7 +15,7 @@ public class ConsumerAppLauncher {
         logger.info("Start OS Metrics consumer");
 
         Config config = Utils.loadConfig(CONSUMER_CONFIG);
-//        DBMigration.run(config);
+        DBMigration.run(config);
         ConsumerWorkersExecutor.run(config);
     }
 }

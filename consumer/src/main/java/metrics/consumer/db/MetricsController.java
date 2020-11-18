@@ -21,19 +21,19 @@ public class MetricsController {
                     "total_swap_space_size, free_swap_space_size) " +
                     "values(?, ?, ?::inet, ?, ?, ?, ?, ?)";
 
-    private final static String CREATE_HOST_TABLE = "" +
-            "create table if not exists host\n" +
-            "(\n" +
-            "    id                         uuid                                not null constraint host_pkey primary key,\n" +
-            "    hostname                   varchar(100)                        not null,\n" +
-            "    ip_address                 inet,\n" +
-            "    system_load_average        bigint                              not null,\n" +
-            "    total_physical_memory_size bigint                              not null,\n" +
-            "    free_physical_memory_size  bigint                              not null,\n" +
-            "    total_swap_space_size      bigint                              not null,\n" +
-            "    free_swap_space_size       bigint                              not null,\n" +
-            "    time_stamp                 timestamp default CURRENT_TIMESTAMP not null\n" +
-            ") without oids;";
+//    private final static String CREATE_HOST_TABLE = "" +
+//            "create table if not exists host\n" +
+//            "(\n" +
+//            "    id                         uuid                                not null constraint host_pkey primary key,\n" +
+//            "    hostname                   varchar(100)                        not null,\n" +
+//            "    ip_address                 inet,\n" +
+//            "    system_load_average        bigint                              not null,\n" +
+//            "    total_physical_memory_size bigint                              not null,\n" +
+//            "    free_physical_memory_size  bigint                              not null,\n" +
+//            "    total_swap_space_size      bigint                              not null,\n" +
+//            "    free_swap_space_size       bigint                              not null,\n" +
+//            "    time_stamp                 timestamp default CURRENT_TIMESTAMP not null\n" +
+//            ") without oids;";
 
     private final Connection connection;
 
@@ -41,12 +41,12 @@ public class MetricsController {
 
     public MetricsController(Connection connection) {
         this.connection = connection;
-        try {
-            Statement statement = connection.createStatement();
-            statement.executeUpdate(CREATE_HOST_TABLE);
-        } catch (SQLException throwables) {
-            logger.error("Could not create table for metrics");
-        }
+//        try {
+//            Statement statement = connection.createStatement();
+//            statement.executeUpdate(CREATE_HOST_TABLE);
+//        } catch (SQLException throwables) {
+//            logger.error("Could not create table for metrics");
+//        }
 
         try {
             hostPreparedStatement = connection.prepareStatement(HOST_HARDWARE_INSERT_SQL);

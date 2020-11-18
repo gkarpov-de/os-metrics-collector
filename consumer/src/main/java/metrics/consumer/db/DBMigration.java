@@ -28,9 +28,8 @@ public class DBMigration {
                                 config.getString(MIGRATION_DB_PASSWORD))
 
                         .load();
-//        flyway.repair();
+        flyway.repair();
         flyway.migrate();
-//        flyway.validate();
         logger.info("DB migration done");
     }
 }
