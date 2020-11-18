@@ -3,6 +3,13 @@
 
 
 
+<<<<<<< HEAD
+=======
+*To prepare you SSL certificates you need to obtain following files:*
+- 'Access Key' - expected file name is: 'service.key'
+- 'Access Certificate' - expected file name is: 'service.cert'
+- 'CA Certificate' - expected file name is: 'ca.pem'- there should be two - one for the Kafka, one for the PostgreSql
+>>>>>>> 9c9363b5e6acdff904a6c45043a0145ed586162d
 
 <!DOCTYPE html>
 <html lang="en">
@@ -488,6 +495,11 @@
 
 
     
+<<<<<<< HEAD
+=======
+### To run Kafka producer
+To run kafka producer you need:
+>>>>>>> 9c9363b5e6acdff904a6c45043a0145ed586162d
 
   <include-fragment class="js-notification-shelf-include-fragment" data-base-src="https://github.com/notifications/beta/shelf"></include-fragment>
 
