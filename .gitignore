@@ -2,11 +2,12 @@
 .gradle
 .idea
 .Ds_Store
-.conf
-.key
-.pem
-.cert
+*.conf
+*.key
+*.pem
+*.cert
 
 # Ignore Gradle build output directory
 build
+# Ignore all secrets directory
 secrets
