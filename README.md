@@ -23,17 +23,17 @@ To build the project run **./gradlew clean installDist** command
 
 Keystore and truststore for holding the keys and certificates can be created with the following commands:
 
-**openssl pkcs12 -export -inkey service.key -in service.cert -out client.keystore.p12 -name service_key**
-**keytool -import -file ca.pem -alias CA -keystore client.truststore.jks**
+##### openssl pkcs12 -export -inkey service.key -in service.cert -out client.keystore.p12 -name service_key
+##### keytool -import -file ca.pem -alias CA -keystore client.truststore.jks
 
 ### To run Kafka consumer
 To run Kafka consumer you need:
 
 1. Execute following on you PostgreSQL server:
 	
-	**create database metricsdb;
-	**create user metricsapp with password 'metricsapp';**
-	**grant all privileges on database metricsdb to metricsapp;**
+##### create database metricsdb;
+##### create user metricsapp with password 'metricsapp';
+##### grant all privileges on database metricsdb to metricsapp;
 
 2. Create a kafka topic, default kafka topic is: `os-metrics`.
 if you want to use another name please see the full list of parameters in the `consumer/consumer.conf` file
