@@ -23,27 +23,26 @@ To build the project run **./gradlew clean installDist** command
 
 Keystore and truststore for holding the keys and certificates can be created with the following commands:
 
-##### openssl pkcs12 -export -inkey service.key -in service.cert -out client.keystore.p12 -name service_key
-##### keytool -import -file ca.pem -alias CA -keystore client.truststore.jks
+**openssl pkcs12 -export -inkey service.key -in service.cert -out client.keystore.p12 -name service_key**<br>
+**keytool -import -file ca.pem -alias CA -keystore client.truststore.jks**
 
 ### To run Kafka consumer
 To run Kafka consumer you need:
 
-1. Execute following on you PostgreSQL server:
-	
-##### create database metricsdb;
-##### create user metricsapp with password 'metricsapp';
-##### grant all privileges on database metricsdb to metricsapp;
+1. Execute following on you PostgreSQL server:<br>
+    **create database metricsdb;** <br>
+    **create user metricsapp with password 'metricsapp';**<br>
+    **grant all privileges on database metricsdb to metricsapp;**
 
 2. Create a kafka topic, default kafka topic is: `os-metrics`.
 if you want to use another name please see the full list of parameters in the `consumer/consumer.conf` file
 
-3. Change parameters  `consumer/consumer.conf`: 
-    `bootstrap.servers` - comma-separated list of Kafka brokers
-    `db.jdbc.url` - PgSQL jdbc URL to the database
-    `db.user` - application user name
-    `db.password` - application user password
-    `omc.topicname` - Kafka topic name
+3. Change parameters in the `consumer/consumer.conf` file:<br> 
+    `bootstrap.servers` - comma-separated list of Kafka brokers<br>
+    `db.jdbc.url` - PgSQL jdbc URL to the database<br>
+    `db.user` - application user name<br>
+    `db.password` - application user password<br>
+    `omc.topicname` - Kafka topic name<br>
     
 ### To run Kafka producer
 To run kafka producer you need:
@@ -51,11 +50,11 @@ To run kafka producer you need:
 1. Create a kafka topic, default kafka topic is: `os-metrics`. 
 if you want to use another name please see the full list of parameters in the `producer/producer.conf` file
 
-2. Change environment variables in the `producer/producer.conf` file
-    `bootstrap.servers` - comma-separated list of Kafka brokers
-    `omc.hostname` - producer host name
-    `omc.ipAddress` - producer IP address
-    `omc.topicname` - Kafka topic name
+2. Change parameters in the `producer/producer.conf` file:<br>
+    `bootstrap.servers` - comma-separated list of Kafka brokers<br>
+    `omc.hostname` - producer host name<br>
+    `omc.ipAddress` - producer IP address<br>
+    `omc.topicname` - Kafka topic name<br>
  
 Configs should be visible for apps - e.g. put them into corresponding folders.
 
